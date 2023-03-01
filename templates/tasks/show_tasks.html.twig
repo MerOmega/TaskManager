@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %} All tasks {% endblock %}
+
+{% block body %}
+
+    <div>
+        {%  for task in tasks %}
+            {{ task.title }}
+            {{ task.createdAt|date("m/d/Y") }}
+            {{ task.description }}
+            {{ task.deadline }}
+        {% endfor %}
+    </div>
+
+{% endblock %}

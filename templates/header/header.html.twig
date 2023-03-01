@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block header %}
+    <header>
+        <div class="flex">
+            <div class="flex-1"><span class="dark:text-white font-bold">Taks Manager</span></div>
+            <div class="flex-1 flex justify-end mr-4">
+                <button id="light-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <p>Light</p>
+                </button>
+                <button id="dark-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <p>Dark</p>
+                </button>
+            </div>
+        </div>
+    </header>
+{% endblock %}
