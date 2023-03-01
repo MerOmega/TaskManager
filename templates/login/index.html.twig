@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="flex justify-center mt-40 place-items-center">
+        <form action="{{ path('app_login') }}" method="post" class="flex flex-col dark:text-white">
+            <label class="pb-2" for="username">Email:</label>
+            <input class="rounded-full text-black px-4
+                py-2 bg-gray-100 border border-gray-300
+                focus:outline-none focus:ring-2 focus:ring-blue-600
+                focus:border-transparent pl-2 pr-2" id="username" name="_username" value="{{ last_username }}">
+
+            <label class="py-2" for="password">Password:</label>
+            <input class="rounded-full text-black px-4
+                py-2 bg-gray-100 border border-gray-300
+                focus:outline-none focus:ring-2 focus:ring-blue-600
+                focus:border-transparent pl-2 pr-2"
+                   type="password" id="password" name="_password">
+
+
+            <input type="hidden" name="_target_path" value="{{ path('app_task') }}">
+
+            <button class="mt-5 py-2 border rounded-full dark:border-red-400" type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
