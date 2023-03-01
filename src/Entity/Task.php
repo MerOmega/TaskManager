@@ -30,6 +30,10 @@ class Task
     #[ORM\JoinColumn(nullable: false)]
     private ?TaskStatus $taskStatus = null;
 
+    #[ORM\ManyToOne(inversedBy: 'tasks')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
 
     public function getId(): ?int
     {
@@ -92,6 +96,18 @@ class Task
     public function setTaskStatus(?TaskStatus $taskStatus): self
     {
         $this->taskStatus = $taskStatus;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
